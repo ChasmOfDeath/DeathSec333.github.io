@@ -1,0 +1,289 @@
+/* Extreme Dark Web Theme - Ultra Dark Version */
+body {
+    background-color: #000000 !important;
+    color: #00ff00 !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23111111' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5V0zm1 5v1H5v-1h1z'/%3E%3C/g%3E%3C/svg%3E") !important;
+}
+
+/* Intense Text Effects */
+h1, h2, h3, h4, h5, h6, .nav-logo {
+    color: #ff0040 !important;
+    text-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040 !important;
+}
+
+/* Extreme Glitch Effect */
+.glitch-text {
+    position: relative !important;
+    animation: textShadowPulse 2s infinite !important;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text) !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.glitch-text::before {
+    left: 2px !important;
+    text-shadow: -1px 0 red !important;
+    animation: glitch-anim-1 2s infinite linear alternate-reverse !important;
+}
+
+.glitch-text::after {
+    left: -2px !important;
+    text-shadow: 1px 0 blue !important;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse !important;
+}
+
+@keyframes glitch-anim-1 {
+    0% {clip: rect(30px, 9999px, 10px, 0);}
+    5% {clip: rect(80px, 9999px, 95px, 0);}
+    10% {clip: rect(15px, 9999px, 25px, 0);}
+    15% {clip: rect(54px, 9999px, 65px, 0);}
+    20% {clip: rect(33px, 9999px, 12px, 0);}
+    25% {clip: rect(20px, 9999px, 30px, 0);}
+    30% {clip: rect(19px, 9999px, 88px, 0);}
+    35% {clip: rect(40px, 9999px, 55px, 0);}
+    40% {clip: rect(70px, 9999px, 80px, 0);}
+    45% {clip: rect(10px, 9999px, 20px, 0);}
+    50% {clip: rect(60px, 9999px, 70px, 0);}
+    55% {clip: rect(30px, 9999px, 40px, 0);}
+    60% {clip: rect(50px, 9999px, 60px, 0);}
+    65% {clip: rect(20px, 9999px, 30px, 0);}
+    70% {clip: rect(40px, 9999px, 50px, 0);}
+    75% {clip: rect(10px, 9999px, 20px, 0);}
+    80% {clip: rect(30px, 9999px, 40px, 0);}
+    85% {clip: rect(50px, 9999px, 60px, 0);}
+    90% {clip: rect(70px, 9999px, 80px, 0);}
+    95% {clip: rect(90px, 9999px, 100px, 0);}
+    100% {clip: rect(5px, 9999px, 15px, 0);}
+}
+
+@keyframes glitch-anim-2 {
+    0% {clip: rect(5px, 9999px, 15px, 0);}
+    5% {clip: rect(90px, 9999px, 100px, 0);}
+    10% {clip: rect(70px, 9999px, 80px, 0);}
+    15% {clip: rect(50px, 9999px, 60px, 0);}
+    20% {clip: rect(30px, 9999px, 40px, 0);}
+    25% {clip: rect(10px, 9999px, 20px, 0);}
+    30% {clip: rect(40px, 9999px, 50px, 0);}
+    35% {clip: rect(20px, 9999px, 30px, 0);}
+    40% {clip: rect(50px, 9999px, 60px, 0);}
+    45% {clip: rect(30px, 9999px, 40px, 0);}
+    50% {clip: rect(60px, 9999px, 70px, 0);}
+    55% {clip: rect(10px, 9999px, 20px, 0);}
+    60% {clip: rect(70px, 9999px, 80px, 0);}
+    65% {clip: rect(40px, 9999px, 55px, 0);}
+    70% {clip: rect(19px, 9999px, 88px, 0);}
+    75% {clip: rect(20px, 9999px, 30px, 0);}
+    80% {clip: rect(33px, 9999px, 12px, 0);}
+    85% {clip: rect(54px, 9999px, 65px, 0);}
+    90% {clip: rect(15px, 9999px, 25px, 0);}
+    95% {clip: rect(80px, 9999px, 95px, 0);}
+    100% {clip: rect(30px, 9999px, 10px, 0);}
+}
+
+@keyframes textShadowPulse {
+    0% {text-shadow: 0 0 4px #00ff00, 0 0 11px #00ff00, 0 0 19px #00ff00;}
+    50% {text-shadow: 0 0 4px #ff0040, 0 0 11px #ff0040, 0 0 19px #ff0040;}
+    100% {text-shadow: 0 0 4px #00ff00, 0 0 11px #00ff00, 0 0 19px #00ff00;}
+}
+
+/* Ultra Dark Cards */
+.service-card, .tool-card, .price-card, .contact-card {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    border: 1px solid #ff0040 !important;
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.3) !important;
+}
+
+.service-card:hover, .tool-card:hover, .price-card:hover, .contact-card:hover {
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    border: 1px solid #ff0040 !important;
+    box-shadow: 0 0 30px rgba(255, 0, 64, 0.5) !important;
+    transform: translateY(-5px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Sinister Buttons */
+.btn-primary, .btn-secondary, .submit-btn, button {
+    background-color: #0a0a0a !important;
+    color: #00ff00 !important;
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3) !important;
+    text-shadow: 0 0 5px #00ff00 !important;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .submit-btn:hover, button:hover {
+    background-color: #0f0f0f !important;
+    color: #ff0040 !important;
+    border: 1px solid #ff0040 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.5) !important;
+    text-shadow: 0 0 5px #ff0040 !important;
+}
+
+/* Dark Sections */
+.section {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-top: 1px solid rgba(255, 0, 64, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 0, 64, 0.2) !important;
+}
+
+/* Eerie Form Fields */
+input, textarea, select {
+    background-color: #000000 !important;
+    color: #00ff00 !important;
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2) inset !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: #050505 !important;
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) inset !important;
+}
+
+/* Flickering Terminal Text */
+.terminal-text {
+    color: #00ff00 !important;
+    animation: flicker 3s infinite !important;
+}
+
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {opacity: 1;}
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {opacity: 0.33;}
+}
+
+/* Encrypted Text Effect */
+.encrypted {
+    color: #00ff00 !important;
+    font-family: monospace !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.encrypted::before {
+    content: attr(data-text) !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #000 !important;
+    overflow: hidden !important;
+    animation: decrypt 3s steps(30) forwards !important;
+    white-space: nowrap !important;
+}
+
+@keyframes decrypt {
+    0% {width: 100%;}
+    100% {width: 0;}
+}
+
+/* Matrix Section Enhancement */
+.matrix-section {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.matrix-section::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 255, 0, 0.1),
+                    rgba(0, 255, 0, 0.1) 1px,
+                    transparent 1px,
+                    transparent 2px
+                ) !important;
+    z-index: -1 !important;
+}
+
+/* Dark Code Output */
+.dark-code {
+    background-color: #000000 !important;
+    color: #00ff00 !important;
+    font-family: monospace !important;
+    padding: 10px !important;
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3) inset !important;
+}
+
+/* Navigation Enhancement */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-bottom: 1px solid #ff0040 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9) !important;
+}
+
+.nav-link {
+    color: #00ff00 !important;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5) !important;
+}
+
+.nav-link:hover {
+    color: #ff0040 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 64, 0.7) !important;
+}
+
+/* Skill Tags */
+.skill-tag {
+    background-color: #0a0a0a !important;
+    color: #00ff00 !important;
+    border: 1px solid #00ff00 !important;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3) !important;
+}
+
+/* Eerie Scrollbar */
+::-webkit-scrollbar {
+    width: 8px !important;
+    background: #000 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff0040, #000) !important;
+    border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff0040, #ff0040) !important;
+}
+
+/* Vignette Effect */
+body::after {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.7) 100%) !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+}
+
+/* Scan Lines Effect */
+body::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+    ) !important;
+    background-size: 100% 4px !important;
+    z-index: 9998 !important;
+    pointer-events: none !important;
+    opacity: 0.15 !important;
+}
