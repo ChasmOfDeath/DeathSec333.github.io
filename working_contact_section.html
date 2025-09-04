@@ -1,0 +1,160 @@
+<!-- WORKING Contact & Payment Section --> <section id="contact" 
+class="section">
+# Find and replace the old Bitcoin address with: 
+# bc1qlxypxj6qh76vgk89wu8cv69uvapge9w3sxengc <div class="container">
+        <h2 class="section-title glitch-text" data-text="Contact & Hire">Contact & Hire</h2>
+        
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:deathsec333@proton.me?subject=Cybersecurity Services Inquiry&body=Hi DeathSec333,%0A%0AI'm interested in your cybersecurity services.%0A%0AService needed:%0A□ Security Consultation%0A□ Penetration Testing%0A□ Custom Tools%0A□ Other%0A%0AMy details:%0AName:%0ACompany:%0APhone:%0ABudget:%0A%0AProject details:%0A%0AThanks!" class="contact-link working-btn">
+                    deathsec333@proton.me
+                </a>
+                <p>Secure ProtonMail encryption</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>Telegram</h3>
+                <a href="https://t.me/DeathSec333" target="_blank" class="contact-link working-btn">
+                    @DeathSec333
+                </a>
+                <p>Encrypted messaging</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">🔗</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/DeathSec333" target="_blank" class="contact-link working-btn">
+                    github.com/DeathSec333
+                </a>
+                <p>Open source projects</p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">💰</div>
+                <h3>Quick Payment</h3>
+                <a href="https://cash.app/$deathsec1337" target="_blank" class="contact-link working-btn" onclick="showPaymentNotification('CashApp')">
+                    $deathsec1337
+                </a>
+                <p>CashApp payments</p>
+            </div>
+        </div>
+        
+        <!-- Service Pricing with Working Buttons -->
+        <div class="hire-section">
+            <h3>🎯 Professional Services - INSTANT BOOKING</h3>
+            <div class="pricing">
+                <div class="price-card">
+                    <h4>Security Consultation</h4>
+                    <div class="price">$100</div>
+                    <p>1-2 hour security assessment</p>
+                    <div class="payment-buttons">
+                        <a href="https://cash.app/$deathsec1337/100" target="_blank" class="payment-btn cashapp" onclick="trackPayment('consultation', 100, 'cashapp')">
+                            💰 Pay $100 - CashApp
+                        </a>
+                        <button onclick="showCryptoPayment('consultation', 100)" class="payment-btn crypto">
+                            ₿ Pay $100 - Bitcoin
+                        </button>
+                        <a href="mailto:deathsec333@proton.me?subject=Security Consultation Payment - $100&body=Hi DeathSec333,%0A%0AI want to book a Security Consultation for $100.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0APreferred date/time:%0A%0AThanks!" class="payment-btn email">
+                            📧 Book & Pay via Email
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="price-card featured">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h4>Penetration Testing</h4>
+                    <div class="price">$1000</div>
+                    <p>Full security assessment</p>
+                    <div class="payment-buttons">
+                        <a href="https://cash.app/$deathsec1337/1000" target="_blank" class="payment-btn cashapp" onclick="trackPayment('pentest', 1000, 'cashapp')">
+                            💰 Pay $1000 - CashApp
+                        </a>
+                        <button onclick="showCryptoPayment('pentest', 1000)" class="payment-btn crypto">
+                            ₿ Pay $1000 - Bitcoin
+                        </button>
+                        <a href="mailto:deathsec333@proton.me?subject=Penetration Testing Payment - $1000&body=Hi DeathSec333,%0A%0AI want to book Penetration Testing for $1000.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0ATarget systems:%0APreferred timeline:%0A%0AThanks!" class="payment-btn email">
+                            📧 Book & Pay via Email
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <h4>Custom Tools</h4>
+                    <div class="price">$500</div>
+                    <p>Bespoke security tools</p>
+                    <div class="payment-buttons">
+                        <a href="https://cash.app/$deathsec1337/500" target="_blank" class="payment-btn cashapp" onclick="trackPayment('tools', 500, 'cashapp')">
+                            💰 Pay $500 - CashApp
+                        </a>
+                        <button onclick="showCryptoPayment('tools', 500)" class="payment-btn crypto">
+                            ₿ Pay $500 - Bitcoin
+                        </button>
+                        <a href="mailto:deathsec333@proton.me?subject=Custom Tool Development - $500&body=Hi DeathSec333,%0A%0AI want to order Custom Tool Development for $500.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0ATool requirements:%0ADeadline:%0A%0AThanks!" class="payment-btn email">
+                            📧 Book & Pay via Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Contact Form -->
+        <div class="contact-form-section">
+            <h3>📝 Instant Contact Form</h3>
+            <form class="contact-form" onsubmit="sendContactEmail(event)">
+                <div class="form-group">
+                    <input type="text" id="clientName" placeholder="Your Name" required>
+                    <input type="email" id="clientEmail" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select id="serviceType" required>
+                        <option value="">Select Service</option>
+                        <option value="consultation">Security Consultation ($100)</option>
+                        <option value="pentest">Penetration Testing ($1000)</option>
+                        <option value="custom-tool">Custom Tool Development ($500)</option>
+                        <option value="other">Other Service</option>
+                    </select>
+                    <input type="text" id="budget" placeholder="Budget Range">
+                </div>
+                <textarea id="projectDetails" placeholder="Project details and requirements..." rows="4" required></textarea>
+                <button type="submit" class="submit-btn working-btn">
+                    📧 Send Secure Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Crypto Payment Modal -->
+<div id="cryptoModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeCryptoModal()">&times;</span>
+        <h3 id="cryptoTitle">💎 Bitcoin Payment</h3>
+        <div class="crypto-payment-info">
+            <p><strong>Service:</strong> <span id="cryptoService"></span></p>
+            <p><strong>Amount:</strong> $<span id="cryptoAmount"></span></p>
+            <div class="wallet-info">
+                <h4>Send Bitcoin to:</h4>
+                <div class="wallet-address">
+                    <code id="btcAddress">bc1qlxypxj6qh76vgk89wu8cv69uvapge9w3sxengc</code>
+                    <button onclick="copyBitcoinAddress()" class="copy-btn">📋 Copy Address</button>
+                </div>
+            </div>
+            <div class="payment-instructions">
+                <h4>Payment Instructions:</h4>
+                <ol>
+                    <li>Copy the Bitcoin address above</li>
+                    <li>Send exact USD amount in Bitcoin</li>
+                    <li>Email transaction ID to confirm payment</li>
+                    <li>Service begins after confirmation</li>
+                </ol>
+            </div>
+            <a href="mailto:deathsec333@proton.me?subject=Bitcoin Payment Confirmation&body=Hi DeathSec333,%0A%0AI have sent Bitcoin payment:%0A%0AService: [SERVICE_NAME]%0AAmount: $[AMOUNT]%0ATransaction ID: [PASTE_TXID_HERE]%0A%0AMy contact details:%0AName:%0AEmail:%0APhone:%0A%0AThanks!" class="payment-btn email">
+                📧 Confirm Bitcoin Payment
+            </a>
+        </div>
+    </div>
+  </div>
