@@ -1,0 +1,31 @@
+[33m5dd2b42[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Restore full CSS with navigation background and add new pages
+[33mabf359f[m Add background image to navigation menu and new pages
+[33m6c9bc18[m Add background image to navigation menu
+[33me1b4c36[m Add tools page to website
+[33mf431c28[m Remove bank transfer payment option, keep only Stripe and Bitcoin
+[33mf42bb30[m Add background images
+[33ma2315d4[m Add dark overlay to body background for better readability
+[33m94a1f47[m Update website content and functionality
+[33m53e0ce4[m Create enhanced_secure_server.py
+[33m13dd8da[m Create manage_python_server.py
+[33ma27d4e4[m Create payment_method_update.html
+[33m0697f60[m Create payment_update.html
+[33m33d9256[m Create script.js
+[33m0454d0d[m Create secure_server.py
+[33mebb2939[m Create security_server.log
+[33m55e2205[m Create security_warning.js
+[33m40f00f1[m Create server.js
+[33mf0223e8[m Create server.log
+[33mb63bf08[m Create start_server.sh
+[33m8323bb0[m Create styles-v2.css
+[33m42eba4e[m Create temp_payment_section.html
+[33m5438b21[m Create tools_marketplace.html
+[33m3982123[m Create working_contact_section.html
+[33m38dbfed[m Create package-lock.json
+[33m65be416[m Create working_payment_section.html
+[33m8012170[m Create darkweb.css
+[33m9605824[m Create LICENSE
+[33md745b9c[m Create README.md
+[33m77ed919[m Create contact_payment_update.html
+[33m65e2fd2[m Create scam-detector.html
+[33m4190be7[m Create index.html
