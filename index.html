@@ -3,300 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeathSec333 Scam Detection Tool</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #000;
-            color: #0f0;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #0f0;
-            text-align: center;
-        }
-        .container {
-            background-color: #111;
-            border: 1px solid #0f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        textarea {
-            width: 100%;
-            height: 150px;
-            background-color: #222;
-            color: #0f0;
-            border: 1px solid #0f0;
-            padding: 10px;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #0f0;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-            display: block;
-            margin: 0 auto;
-            font-family: 'Courier New', monospace;
-        }
-        button:hover {
-            background-color: #0a0;
-        }
-        #results {
-            white-space: pre-wrap;
-            background-color: #222;
-            padding: 15px;
-            border: 1px solid #0f0;
-            display: none;
-        }
-        .score-container {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 24px;
-        }
-        .score {
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .low { color: #0f0; }
-        .medium { color: yellow; }
-        .high { color: orange; }
-        .very-high { color: red; }
-        .section {
-            margin-top: 15px;
-            border-top: 1px solid #0f0;
-            padding-top: 15px;
-        }
-        .disclaimer {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-        }
-    </style>
+    <title>DeathSec - Professional Services</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>DeathSec333 Scam Detection Tool</h1>
-    <div class="container">
-        <p>Paste suspicious text, emails, or messages below to analyze for scam indicators:</p>
-        <textarea id="scamText" placeholder="Paste suspicious text here..."></textarea>
-        <button onclick="analyzeText()">ANALYZE</button>
-    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="payments.html">Payments</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     
-    <div id="results" class="container"></div>
+    <header class="hero">
+        <div class="container">
+            <h1>Welcome to DeathSec</h1>
+            <p>Professional solutions for your digital needs</p>
+            <a href="services.html" class="btn">Explore Our Services</a>
+        </div>
+    </header>
     
-    <div class="disclaimer">
-        © 2025 DeathSec333. This tool analyzes text for common scam indicators. 
-        No data is stored or transmitted to external servers. All analysis is performed locally in your browser.
-    </div>
-
-    <script>
-        // Scam indicators patterns
-        const SCAM_INDICATORS = {
-            "urgency": [
-                /\burgent\b/i, /\bimmediate\b/i, /\bact now\b/i, /\blimited time\b/i, /\bexpires today\b/i,
-                /\blast chance\b/i, /\bhurry\b/i, /\bquickly\b/i, /\brunning out\b/i, /\bdeadline\b/i
-            ],
-            "financial": [
-                /\bmillion\b/i, /\bbillion\b/i, /\bdollars\b/i, /\beuros\b/i, /\bcash\b/i, /\bmoney\b/i,
-                /\bpayment\b/i, /\bbank\b/i, /\baccount\b/i, /\btransfer\b/i, /\btransaction\b/i, /\bloan\b/i,
-                /\bcredit\b/i, /\bdebit\b/i, /\bfund\b/i, /\bdeposit\b/i, /\bwire\b/i, /\bwestern union\b/i
-            ],
-            "personal_info": [
-                /\bssn\b/i, /\bsocial security\b/i, /\bpassword\b/i, /\bcredentials\b/i, /\blogin\b/i,
-                /\busername\b/i, /\bverify your\b/i, /\bconfirm your\b/i, /\bupdate your\b/i, /\bidentity\b/i,
-                /\bid number\b/i, /\bidentification\b/i, /\bpassport\b/i, /\blicense\b/i, /\bcard number\b/i
-            ],
-            "rewards": [
-                /\bprize\b/i, /\bwinner\b/i, /\bwon\b/i, /\blottery\b/i, /\bselected\b/i, /\breward\b/i,
-                /\bgift\b/i, /\bfree\b/i, /\bbonus\b/i, /\bdiscount\b/i, /\boffer\b/i, /\bpromotion\b/i,
-                /\bcongratulations\b/i, /\bselected\b/i, /\bexclusive\b/i
-            ],
-            "threats": [
-                /\bsuspend\b/i, /\bterminate\b/i, /\bcancel\b/i, /\bclose\b/i, /\bblock\b/i, /\brestrict\b/i,
-                /\blimit\b/i, /\bunauthorized\b/i, /\bsuspicious\b/i, /\bunusual\b/i, /\billegal\b/i,
-                /\bviolation\b/i, /\bfraud\b/i, /\bpenalty\b/i, /\bfee\b/i, /\bcharge\b/i, /\blawsuit\b/i
-            ],
-            "crypto": [
-                /\bbitcoin\b/i, /\bbtc\b/i, /\bethereum\b/i, /\beth\b/i, /\bcrypto\b/i, /\bwallet\b/i,
-                /\bblockchain\b/i, /\btoken\b/i, /\bcoin\b/i, /\bmining\b/i, /\binvestment\b/i, /\bprofit\b/i,
-                /\btrading\b/i, /\bexchange\b/i, /\bbinance\b/i, /\bcoinbase\b/i, /\bmetamask\b/i
-            ]
-        };
-
-        // Suspicious TLDs
-        const SUSPICIOUS_TLD = [
-            ".xyz", ".top", ".club", ".online", ".site", ".icu", ".vip",
-            ".work", ".rest", ".fit", ".loan", ".click", ".diet", ".racing"
-        ];
-
-        function analyzeText() {
-            const text = document.getElementById('scamText').value.toLowerCase();
-            const resultsDiv = document.getElementById('results');
-            
-            if (!text.trim()) {
-                alert("Please enter some text to analyze.");
-                return;
-            }
-            
-            // Initialize results
-            const results = {
-                indicators: {},
-                score: 0,
-                suspiciousUrls: [],
-                suspiciousPhoneNumbers: []
-            };
-            
-            // Check for scam indicators
-            let totalIndicators = 0;
-            for (const [category, patterns] of Object.entries(SCAM_INDICATORS)) {
-                const matches = [];
-                for (const pattern of patterns) {
-                    if (pattern.test(text)) {
-                        const match = text.match(pattern)[0];
-                        if (!matches.includes(match)) {
-                            matches.push(match);
-                        }
-                    }
-                }
-                
-                if (matches.length > 0) {
-                    results.indicators[category] = matches;
-                    totalIndicators += matches.length;
-                }
-            }
-            
-            // Extract and analyze URLs
-            const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
-            const urls = text.match(urlRegex) || [];
-            
-            for (const url of urls) {
-                try {
-                    const domain = new URL(url).hostname;
-                    let suspicious = false;
-                    const reasons = [];
-                    
-                    // Check for suspicious TLDs
-                    for (const tld of SUSPICIOUS_TLD) {
-                        if (domain.endsWith(tld)) {
-                            suspicious = true;
-                            reasons.push(`Suspicious TLD: ${tld}`);
-                        }
-                    }
-                    
-                    // Check for numeric domains
-                    if (/\d{4,}/.test(domain)) {
-                        suspicious = true;
-                        reasons.push("Domain contains many numbers");
-                    }
-                    
-                    // Check for very long domains
-                    if (domain.length > 30) {
-                        suspicious = true;
-                        reasons.push("Unusually long domain");
-                    }
-                    
-                    if (suspicious) {
-                        results.suspiciousUrls.push({
-                            url: url,
-                            domain: domain,
-                            reasons: reasons
-                        });
-                        totalIndicators += 2;
-                    }
-                } catch (e) {
-                    // Invalid URL, skip
-                }
-            }
-            
-            // Extract and analyze phone numbers
-            const phoneRegex = /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/g;
-            const phoneNumbers = text.match(phoneRegex) || [];
-            
-            for (const phone of phoneNumbers) {
-                if (phone.startsWith('+')) {
-                    results.suspiciousPhoneNumbers.push(phone);
-                    totalIndicators += 1;
-                }
-            }
-            
-            // Calculate score (0-100)
-            results.score = Math.min(100, totalIndicators * 5);
-            
-            // Generate report
-            let report = '';
-            
-            // Add score and risk level
-            let riskLevel = "Low";
-            let riskClass = "low";
-            if (results.score >= 80) {
-                riskLevel = "Very High";
-                riskClass = "very-high";
-            } else if (results.score >= 50) {
-                riskLevel = "High";
-                riskClass = "high";
-            } else if (results.score >= 20) {
-                riskLevel = "Medium";
-                riskClass = "medium";
-            }
-            
-            report += `<div class="score-container">Risk Score: <span class="score ${riskClass}">${results.score}/100</span><br>(${riskLevel} Risk)</div>`;
-            
-            // Add detected indicators
-            report += '<div class="section"><h3>DETECTED INDICATORS</h3>';
-            if (Object.keys(results.indicators).length > 0) {
-                for (const [category, matches] of Object.entries(results.indicators)) {
-                    const categoryFormatted = category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
-                    report += `<p><strong>${categoryFormatted}:</strong> ${matches.join(', ')}</p>`;
-                }
-            } else {
-                report += '<p>No scam indicators detected</p>';
-            }
-            report += '</div>';
-            
-            // Add suspicious URLs
-            if (results.suspiciousUrls.length > 0) {
-                report += '<div class="section"><h3>SUSPICIOUS URLS</h3>';
-                for (const urlInfo of results.suspiciousUrls) {
-                    report += `<p><strong>URL:</strong> ${urlInfo.url}<br>`;
-                    report += `<strong>Domain:</strong> ${urlInfo.domain}<br>`;
-                    report += `<strong>Reasons:</strong> ${urlInfo.reasons.join(', ')}</p>`;
-                }
-                report += '</div>';
-            }
-            
-            // Add suspicious phone numbers
-            if (results.suspiciousPhoneNumbers.length > 0) {
-                report += '<div class="section"><h3>SUSPICIOUS PHONE NUMBERS</h3>';
-                for (const phone of results.suspiciousPhoneNumbers) {
-                    report += `<p>${phone}</p>`;
-                }
-                report += '</div>';
-            }
-            
-            // Add recommendations
-            report += '<div class="section"><h3>RECOMMENDATIONS</h3>';
-            if (riskLevel === "Low") {
-                report += '<p>This content appears to be legitimate, but always remain cautious.</p>';
-            } else if (riskLevel === "Medium") {
-                report += '<p>Exercise caution with this content. Verify through official channels before taking action.</p>';
-            } else if (riskLevel === "High") {
-                report += '<p>This content shows strong indicators of being a scam. Do not respond or provide any information.</p>';
-            } else {
-                report += '<p>This is almost certainly a scam. Do not engage with this content in any way.</p>';
-            }
-            report += '</div>';
-            
-            // Display results
-            resultsDiv.innerHTML = report;
-            resultsDiv.style.display = 'block';
-        }
-    </script>
+    <section class="features">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Professional Services</h3>
+                    <p>Expert solutions tailored to your needs</p>
+                </div>
+                <div class="feature">
+                    <h3>Reliable Support</h3>
+                    <p>24/7 assistance for all clients</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure Transactions</h3>
+                    <p>Your safety is our priority</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DeathSec. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
+
