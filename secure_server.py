@@ -1,28 +1,36 @@
 #!/usr/bin/env python3
 import http.server
 import socketserver
-import ssl
 import os
 
-class SecureHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+PORT = 4444
+
+class SecureHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         # Add security headers
-        self.send_header('X-Frame-Options', 'DENY')
         self.send_header('X-Content-Type-Options', 'nosniff')
+        self.send_header('X-Frame-Options', 'DENY')
         self.send_header('X-XSS-Protection', '1; mode=block')
-        self.send_header('Referrer-Policy', 'strict-origin-when-cross-origin')
+        self.send_header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
+        self.send_header('Content-Security-Policy', "default-src 'self'")
         super().end_headers()
+
+class ReuseAddrTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
+if __name__ == "__main__":
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
-    def log_message(self, format, *args):
-        print(f"🔒 DeathSec333 Server: {format % args}")
+    Handler = SecureHandler
+    
+    try:
+        with ReuseAddrTCPServer(("", PORT), Handler) as httpd:
+            print(f"🔥 DeathSec333 Secure Server Starting on Port {PORT}")
+            print(f"🌐 Access: http://localhost:{PORT}")
+            print("🔒 Security headers enabled")
+            httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\n🛑 Server stopped")
+    except Exception as e:
+        print(f"❌ Error: {e}")
 
-PORT = 1337
-Handler = SecureHTTPRequestHandler
-
-print(f"🔥 DeathSec333 Secure Server Starting on Port {PORT}")
-print(f"🌐 Access: http://localhost:{PORT}")
-print(f"🔒 Security headers enabled")
-
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print(f"✅ Server running on port {PORT}")
-    httpd.serve_forever()

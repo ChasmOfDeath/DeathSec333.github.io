@@ -1,71 +1,196 @@
-        <div class="hire-section">
-            <h3>🎯 Professional Services</h3>
-            <p>Elite cybersecurity consulting and penetration testing services</p>
-            <div class="pricing">
-                <div class="price-card">
-                    <h4>Security Consultation</h4>
-                    <div class="price">$75-150</div>
-                    <p>Initial security assessment and recommendations</p>
-                    <ul class="service-features">
-                        <li>✅ 1-2 hour consultation</li>
-                        <li>✅ Security recommendations</li>
-                        <li>✅ Written report</li>
-                    </ul>
-                    <div class="payment-buttons">
-                        <button class="cashapp-btn" data-amount="100" data-note="Security Consultation">
-                            💰 Pay $100 via CashApp
-                        </button>
-                        <button class="email-payment-btn" data-service="Security Consultation" data-amount="100">
-                            📧 Request Payment Options
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="price-card featured">
-                    <div class="popular-badge">POPULAR</div>
-                    <h4>Penetration Testing</h4>
-                    <div class="price">$500-2000</div>
-                    <p>Comprehensive security testing and vulnerability assessment</p>
-                    <ul class="service-features">
-                        <li>✅ Full network scan</li>
-                        <li>✅ Web application testing</li>
-                        <li>✅ Detailed vulnerability report</li>
-                        <li>✅ Remediation guidance</li>
-                    </ul>
-                    <div class="payment-buttons">
-                        <button class="cashapp-btn" data-amount="1000" data-note="Penetration Testing">
-                            💰 Pay $1000 via CashApp
-                        </button>
-                        <button class="crypto-btn" data-crypto="Bitcoin">
-                            ₿ Pay with Bitcoin
-                        </button>
-                        <button class="email-payment-btn" data-service="Penetration Testing" data-amount="1000">
-                            📧 Get Quote
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="price-card">
-                    <h4>Custom Tools</h4>
-                    <div class="price">$200-1000</div>
-                    <p>Bespoke cybersecurity tools and automation</p>
-                    <ul class="service-features">
-                        <li>✅ Custom development</li>
-                        <li>✅ Source code included</li>
-                        <li>✅ Documentation</li>
-                        <li>✅ Support included</li>
-                    </ul>
-                    <div class="payment-buttons">
-                        <button class="cashapp-btn" data-amount="500" data-note="Custom Tool Development">
-                            💰 Pay $500 via CashApp
-                        </button>
-                        <button class="crypto-btn" data-crypto="Ethereum">
-                            💎 Pay with ETH/USDT
-                        </button>
-                        <button class="email-payment-btn" data-service="Custom Tool Development" data-amount="500">
-                            📧 Discuss Project
-                        </button>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - DeathSec333</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tools_marketplace.html">Tools</a></li>
+    <li><a href="scam-detector.html">Scam Detector</a></li>
+    <li><a href="working_payment_section.html">Payment</a></li>
+    <li><a href="working_contact_section.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+    <h1>Secure Payment</h1>
+    
+    <div class="payment-container">
+        <div class="payment-methods">
+            <h3>Payment Methods</h3>
+            
+            <div class="method-card" onclick="selectMethod('crypto')">
+                <h4>🪙 Cryptocurrency</h4>
+                <p>Bitcoin, Ethereum, Monero</p>
+                <p class="secure">Most Secure & Anonymous</p>
+            </div>
+            
+            <div class="method-card" onclick="selectMethod('paypal')">
+                <h4>💳 PayPal</h4>
+                <p>Secure online payments</p>
+                <p class="secure">Buyer Protection</p>
+            </div>
+            
+            <div class="method-card" onclick="selectMethod('card')">
+                <h4>💳 Credit/Debit Card</h4>
+                <p>Visa, MasterCard, American Express</p>
+                <p class="secure">SSL Encrypted</p>
             </div>
         </div>
+        
+        <div id="payment-form" class="payment-form">
+            <h3>Payment Details</h3>
+            <p>Select a payment method above to continue</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.payment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.payment-methods, .payment-form {
+    background-color: #111;
+    border: 1px solid #0f0;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.method-card {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    border-color: #0f0;
+    background-color: #333;
+}
+
+.method-card.selected {
+    border-color: #0f0;
+    background-color: #0f0;
+    color: #000;
+}
+
+.secure {
+    color: #0f0;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #222;
+    border: 1px solid #0f0;
+    color: #0f0;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .payment-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+function selectMethod(method) {
+    // Remove previous selection
+    document.querySelectorAll('.method-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    // Add selection to clicked card
+    event.target.closest('.method-card').classList.add('selected');
+    
+    const formDiv = document.getElementById('payment-form');
+    
+    if (method === 'crypto') {
+        formDiv.innerHTML = `
+            <h3>Cryptocurrency Payment</h3>
+            <div class="form-group">
+                <label>Select Cryptocurrency:</label>
+                <select>
+                    <option>Bitcoin (BTC)</option>
+                    <option>Ethereum (ETH)</option>
+                    <option>Monero (XMR)</option>
+                </select>
+            </div>
+            <div class="crypto-address">
+                <p><strong>Bitcoin Address:</strong></p>
+                <code>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</code>
+                <p style="margin-top: 1rem;"><strong>Amount:</strong> 0.001 BTC</p>
+            </div>
+            <button class="btn" onclick="processCryptoPayment()">Confirm Payment</button>
+        `;
+    } else if (method === 'paypal') {
+        formDiv.innerHTML = `
+            <h3>PayPal Payment</h3>
+            <div class="form-group">
+                <label>PayPal Email:</label>
+                <input type="email" placeholder="your@email.com">
+            </div>
+            <button class="btn" onclick="processPayPalPayment()">Pay with PayPal</button>
+        `;
+    } else if (method === 'card') {
+        formDiv.innerHTML = `
+            <h3>Card Payment</h3>
+            <div class="form-group">
+                <label>Card Number:</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group">
+                <label>Expiry Date:</label>
+                <input type="text" placeholder="MM/YY">
+            </div>
+            <div class="form-group">
+                <label>CVV:</label>
+                <input type="text" placeholder="123">
+            </div>
+            <div class="form-group">
+                <label>Cardholder Name:</label>
+                <input type="text" placeholder="John Doe">
+            </div>
+            <button class="btn" onclick="processCardPayment()">Process Payment</button>
+        `;
+    }
+}
+
+function processCryptoPayment() {
+    alert('Please send the exact amount to the provided address. Your order will be processed after confirmation.');
+}
+
+function processPayPalPayment() {
+    alert('Redirecting to PayPal...');
+}
+
+function processCardPayment() {
+    alert('Processing payment... This is a demo - no actual payment will be charged.');
+}
+</script>
+</body>
+</html>

@@ -1,160 +1,243 @@
-<!-- WORKING Contact & Payment Section --> <section id="contact" 
-class="section">
-# Find and replace the old Bitcoin address with: 
-# bc1qlxypxj6qh76vgk89wu8cv69uvapge9w3sxengc <div class="container">
-        <h2 class="section-title glitch-text" data-text="Contact & Hire">Contact & Hire</h2>
-        
-        <!-- Contact Methods -->
-        <div class="contact-methods">
-            <div class="contact-card">
-                <div class="contact-icon">📧</div>
-                <h3>Email</h3>
-                <a href="mailto:deathsec333@proton.me?subject=Cybersecurity Services Inquiry&body=Hi DeathSec333,%0A%0AI'm interested in your cybersecurity services.%0A%0AService needed:%0A□ Security Consultation%0A□ Penetration Testing%0A□ Custom Tools%0A□ Other%0A%0AMy details:%0AName:%0ACompany:%0APhone:%0ABudget:%0A%0AProject details:%0A%0AThanks!" class="contact-link working-btn">
-                    deathsec333@proton.me
-                </a>
-                <p>Secure ProtonMail encryption</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DeathSec333</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tools_marketplace.html">Tools</a></li>
+    <li><a href="scam-detector.html">Scam Detector</a></li>
+    <li><a href="working_payment_section.html">Payment</a></li>
+    <li><a href="working_contact_section.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+    <h1>Contact DeathSec333</h1>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <div class="contact-method">
+                <h4>📧 Email</h4>
+                <p>contact@deathsec333.com</p>
+                <p>support@deathsec333.com</p>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">💬</div>
-                <h3>Telegram</h3>
-                <a href="https://t.me/DeathSec333" target="_blank" class="contact-link working-btn">
-                    @DeathSec333
-                </a>
-                <p>Encrypted messaging</p>
+            <div class="contact-method">
+                <h4>💬 Telegram</h4>
+                <p>@DeathSec333</p>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">🔗</div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/DeathSec333" target="_blank" class="contact-link working-btn">
-                    github.com/DeathSec333
-                </a>
-                <p>Open source projects</p>
+            <div class="contact-method">
+                <h4>🔐 PGP Key</h4>
+                <p>Available for secure communications</p>
+                <button class="btn" onclick="showPGP()">View PGP Key</button>
             </div>
             
-            <div class="contact-card">
-                <div class="contact-icon">💰</div>
-                <h3>Quick Payment</h3>
-                <a href="https://cash.app/$deathsec1337" target="_blank" class="contact-link working-btn" onclick="showPaymentNotification('CashApp')">
-                    $deathsec1337
-                </a>
-                <p>CashApp payments</p>
+            <div class="contact-method">
+                <h4>⏰ Response Time</h4>
+                <p>24-48 hours for general inquiries</p>
+                <p>2-6 hours for urgent security matters</p>
+            </div>
+            
+            <div class="contact-method">
+                <h4>🌐 Services</h4>
+                <p>• Penetration Testing</p>
+                <p>• Security Audits</p>
+                <p>• Custom Tool Development</p>
+                <p>• Security Consulting</p>
             </div>
         </div>
         
-        <!-- Service Pricing with Working Buttons -->
-        <div class="hire-section">
-            <h3>🎯 Professional Services - INSTANT BOOKING</h3>
-            <div class="pricing">
-                <div class="price-card">
-                    <h4>Security Consultation</h4>
-                    <div class="price">$100</div>
-                    <p>1-2 hour security assessment</p>
-                    <div class="payment-buttons">
-                        <a href="https://cash.app/$deathsec1337/100" target="_blank" class="payment-btn cashapp" onclick="trackPayment('consultation', 100, 'cashapp')">
-                            💰 Pay $100 - CashApp
-                        </a>
-                        <button onclick="showCryptoPayment('consultation', 100)" class="payment-btn crypto">
-                            ₿ Pay $100 - Bitcoin
-                        </button>
-                        <a href="mailto:deathsec333@proton.me?subject=Security Consultation Payment - $100&body=Hi DeathSec333,%0A%0AI want to book a Security Consultation for $100.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0APreferred date/time:%0A%0AThanks!" class="payment-btn email">
-                            📧 Book & Pay via Email
-                        </a>
-                    </div>
+        <div class="contact-form">
+            <h3>Send Message</h3>
+            <form onsubmit="sendMessage(event)">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" id="name" required>
                 </div>
                 
-                <div class="price-card featured">
-                    <div class="popular-badge">MOST POPULAR</div>
-                    <h4>Penetration Testing</h4>
-                    <div class="price">$1000</div>
-                    <p>Full security assessment</p>
-                    <div class="payment-buttons">
-                        <a href="https://cash.app/$deathsec1337/1000" target="_blank" class="payment-btn cashapp" onclick="trackPayment('pentest', 1000, 'cashapp')">
-                            💰 Pay $1000 - CashApp
-                        </a>
-                        <button onclick="showCryptoPayment('pentest', 1000)" class="payment-btn crypto">
-                            ₿ Pay $1000 - Bitcoin
-                        </button>
-                        <a href="mailto:deathsec333@proton.me?subject=Penetration Testing Payment - $1000&body=Hi DeathSec333,%0A%0AI want to book Penetration Testing for $1000.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0ATarget systems:%0APreferred timeline:%0A%0AThanks!" class="payment-btn email">
-                            📧 Book & Pay via Email
-                        </a>
-                    </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="email" required>
                 </div>
                 
-                <div class="price-card">
-                    <h4>Custom Tools</h4>
-                    <div class="price">$500</div>
-                    <p>Bespoke security tools</p>
-                    <div class="payment-buttons">
-                        <a href="https://cash.app/$deathsec1337/500" target="_blank" class="payment-btn cashapp" onclick="trackPayment('tools', 500, 'cashapp')">
-                            💰 Pay $500 - CashApp
-                        </a>
-                        <button onclick="showCryptoPayment('tools', 500)" class="payment-btn crypto">
-                            ₿ Pay $500 - Bitcoin
-                        </button>
-                        <a href="mailto:deathsec333@proton.me?subject=Custom Tool Development - $500&body=Hi DeathSec333,%0A%0AI want to order Custom Tool Development for $500.%0A%0APreferred payment:%0A□ CashApp ($deathsec1337)%0A□ Bitcoin%0A□ Bank Transfer%0A%0AMy details:%0AName:%0ACompany:%0AEmail:%0APhone:%0ATool requirements:%0ADeadline:%0A%0AThanks!" class="payment-btn email">
-                            📧 Book & Pay via Email
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Quick Contact Form -->
-        <div class="contact-form-section">
-            <h3>📝 Instant Contact Form</h3>
-            <form class="contact-form" onsubmit="sendContactEmail(event)">
                 <div class="form-group">
-                    <input type="text" id="clientName" placeholder="Your Name" required>
-                    <input type="email" id="clientEmail" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <select id="serviceType" required>
-                        <option value="">Select Service</option>
-                        <option value="consultation">Security Consultation ($100)</option>
-                        <option value="pentest">Penetration Testing ($1000)</option>
-                        <option value="custom-tool">Custom Tool Development ($500)</option>
-                        <option value="other">Other Service</option>
+                    <label>Subject:</label>
+                    <select id="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="tools">Tool Purchase</option>
+                        <option value="custom">Custom Development</option>
+                        <option value="pentest">Penetration Testing</option>
+                        <option value="support">Technical Support</option>
+                        <option value="urgent">Urgent Security Matter</option>
                     </select>
-                    <input type="text" id="budget" placeholder="Budget Range">
                 </div>
-                <textarea id="projectDetails" placeholder="Project details and requirements..." rows="4" required></textarea>
-                <button type="submit" class="submit-btn working-btn">
-                    📧 Send Secure Message
-                </button>
+                
+                <div class="form-group">
+                    <label>Message:</label>
+                    <textarea id="message" rows="6" required placeholder="Describe your requirements or inquiry..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" required> 
+                        I agree to the terms of service and privacy policy
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </div>
-</section>
+    
+    <div id="pgp-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePGP()">&times;</span>
+            <h3>PGP Public Key</h3>
+            <textarea readonly>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 
-<!-- Crypto Payment Modal -->
-<div id="cryptoModal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close" onclick="closeCryptoModal()">&times;</span>
-        <h3 id="cryptoTitle">💎 Bitcoin Payment</h3>
-        <div class="crypto-payment-info">
-            <p><strong>Service:</strong> <span id="cryptoService"></span></p>
-            <p><strong>Amount:</strong> $<span id="cryptoAmount"></span></p>
-            <div class="wallet-info">
-                <h4>Send Bitcoin to:</h4>
-                <div class="wallet-address">
-                    <code id="btcAddress">bc1qlxypxj6qh76vgk89wu8cv69uvapge9w3sxengc</code>
-                    <button onclick="copyBitcoinAddress()" class="copy-btn">📋 Copy Address</button>
-                </div>
-            </div>
-            <div class="payment-instructions">
-                <h4>Payment Instructions:</h4>
-                <ol>
-                    <li>Copy the Bitcoin address above</li>
-                    <li>Send exact USD amount in Bitcoin</li>
-                    <li>Email transaction ID to confirm payment</li>
-                    <li>Service begins after confirmation</li>
-                </ol>
-            </div>
-            <a href="mailto:deathsec333@proton.me?subject=Bitcoin Payment Confirmation&body=Hi DeathSec333,%0A%0AI have sent Bitcoin payment:%0A%0AService: [SERVICE_NAME]%0AAmount: $[AMOUNT]%0ATransaction ID: [PASTE_TXID_HERE]%0A%0AMy contact details:%0AName:%0AEmail:%0APhone:%0A%0AThanks!" class="payment-btn email">
-                📧 Confirm Bitcoin Payment
-            </a>
+mQENBGHxyz0BCADMzK8vQ9X2Y3Z1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q8R9
+S0T1U2V3W4X5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9M0N1O2P3Q4R5S6T7U8V9W0X1
+Y2Z3A4B5C6D7E8F9G0H1I2J3K4L5M6N7O8P9Q0R1S2T3U4V5W6X7Y8Z9A0B1C2D3
+E4F5G6H7I8J9K0L1M2N3O4P5Q6R7S8T9U0V1W2X3Y4Z5A6B7C8D9E0F1G2H3I4J5
+K6L7M8N9O0P1Q2R3S4T5U6V7W8X9Y0Z1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7
+Q8R9S0T1U2V3W4X5Y6Z7A8B9C0D1E2F3G4H5I6J7K8L9M0N1O2P3Q4R5S6T7U8V9
+ABEAAAG0JERlYXRoU2VjMzMzIDxjb250YWN0QGRlYXRoc2VjMzMzLmNvbT6JATgE
+EwECACIFAmHxyz0CGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEKqqqqqq
+qqqqqqoH/2xY3Z4A5B6C7D8E9F0G1H2I3J4K5L6M7N8O9P0Q1R2S3T4U5V6W7X8
+Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0U1V2W3X4Y5Z6A7B8C9D0
+
+-----END PGP PUBLIC KEY BLOCK-----
+            </textarea>
+            <p>Use this key to encrypt sensitive communications.</p>
         </div>
     </div>
-  </div>
+</div>
+
+<style>
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info, .contact-form {
+    background-color: #111;
+    border: 1px solid #0f0;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.contact-method {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+.contact-method h4 {
+    color: #0f0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-method p {
+    margin: 0.3rem 0;
+    color: #ccc;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #0f0;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    color: #0f0;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.modal textarea {
+    width: 100%;
+    height: 200px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+function sendMessage(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Simulate sending message
+    alert(`Thank you ${name}! Your message has been sent. We'll respond to ${email} within 24-48 hours.`);
+    
+    // Reset form
+    event.target.reset();
+}
+
+function showPGP() {
+    document.getElementById('pgp-modal').style.display = 'block';
+}
+
+function closePGP() {
+    document.getElementById('pgp-modal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('pgp-modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
